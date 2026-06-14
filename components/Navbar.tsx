@@ -4,6 +4,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import StyledButton from '@/components/StyledButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,12 +57,9 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-teal-800 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <Link 
-              href="/#contact"
-              className="text-[10px] font-bold uppercase tracking-wider text-white bg-teal-800 hover:bg-teal-700 transition-colors px-4 py-2 rounded-full duration-200"
-            >
-              Get In Touch
-            </Link>
+            <StyledButton as="a" href="/#contact" variant="primary">
+                Get In Touch
+              </StyledButton>
           </div>
 
           {/* Mobile Menu Button */}

@@ -6,7 +6,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import { projects } from '@/data/projects';
-import HeroVisual from '@/components/HeroVisual';
+import HeroOrb from '@/components/HeroOrb';
+import StyledButton from '@/components/StyledButton';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });

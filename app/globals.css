@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fcfbfa; /* Warm off-white / soft cream background */
-  --foreground: #18181b; /* Zinc-900 for primary text */
-  --card: #ffffff; /* Pure white card background */
-  --card-hover: #faf9f6; /* Very soft warm cream on hover */
-  --card-border: rgba(24, 24, 27, 0.06); /* Very subtle borders */
-  --accent: #0f766e; /* Soft deep teal accent */
-  --accent-light: #115e59; /* Slightly darker teal for hover states */
-  --accent-muted: rgba(15, 118, 110, 0.05); /* Soft teal highlights */
-  --muted: #71717a; /* Zinc-500 for descriptions and helper text */
+  --background: #FAF7F0; /* Cream background */
+  --foreground: #111827; /* Dark text */
+  --card: #FFFFFFCC; /* Soft card background with opacity */
+  --card-hover: #FAF9F6; /* Slightly different on hover */
+  --card-border: rgba(24, 24, 27, 0.06);
+  --accent: #005F56; /* Deep teal */
+  --accent-light: #047857; /* Emerald */
+  --accent-glow: rgba(0,95,86,0.18);
+  --muted: #6B7280; /* Muted text */
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
