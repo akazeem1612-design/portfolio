@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfbfa; /* Warm off-white / soft cream background */
+  --foreground: #18181b; /* Zinc-900 for primary text */
+  --card: #ffffff; /* Pure white card background */
+  --card-hover: #faf9f6; /* Very soft warm cream on hover */
+  --card-border: rgba(24, 24, 27, 0.06); /* Very subtle borders */
+  --accent: #0f766e; /* Soft deep teal accent */
+  --accent-light: #115e59; /* Slightly darker teal for hover states */
+  --accent-muted: rgba(15, 118, 110, 0.05); /* Soft teal highlights */
+  --muted: #71717a; /* Zinc-500 for descriptions and helper text */
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-muted: var(--accent-muted);
+  --color-muted-text: var(--muted);
+  
+  --font-sans: var(--font-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom modern scrollbar for light mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Glassmorphism/blur utility for light mode header */
+.glassmorphism {
+  background: rgba(252, 251, 250, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.05);
+}
+
+/* Clean, modern card transition */
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(24, 24, 27, 0.02), 0 1px 2px -1px rgba(24, 24, 27, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 118, 110, 0.15);
+  box-shadow: 0 12px 30px -10px rgba(24, 24, 27, 0.06), 0 4px 12px -5px rgba(15, 118, 110, 0.03);
 }
