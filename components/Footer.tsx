@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-2 text-xs text-zinc-500 max-w-sm">
-              Bridging business strategy, software architecture, and AI automation to deliver measurable data-driven solutions.
+                Building practical analytics, automation, and operations systems.
             </p>
           </div>
 

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import { projects } from '@/data/projects';
+import HeroVisual from '@/components/HeroVisual';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -52,13 +53,37 @@ export default function Home() {
   const resumeHistory = [
     {
       type: 'Education',
-      title: 'Bachelor of Science in Business Technology Management',
-      institution: 'Canadian University (Decision Sciences & Information Systems)',
+      title: 'Honours Bachelor of Commerce, Business Technology Management',
+      institution: 'University of Ottawa, Telfer School of Management',
       period: '2022 - 2026',
       details: [
-        'Focus: Merging business strategy, spreadsheet logic, API databases, and process optimization.',
-        'Relevant coursework: Database Systems, Applied Business Statistics, Process Automation, Product Management.',
-        'GPA: 3.8/4.0'
+        'Graduated Cum Laude',
+        'Dean’s Honour List, Fall 2025',
+        'Merit Scholarship Recipient',
+        'Relevant coursework: Business Data Mining, Cybersecurity Management, Financial Management, Project Management, Systems Analysis, Statistics for Management',
+        'Certification: AWS Certified Cloud Practitioner'
+      ]
+    },
+    {
+      type: 'Experience',
+      title: 'Data Analytics Intern',
+      institution: 'Ededge Learning (EGIEP)',
+      period: 'May 2025 - Jul 2025',
+      details: [
+        'Built data pipelines in Python and SQL for data cleaning, exploratory analysis, regression, classification, and business dataset preparation.',
+        'Designed Tableau and Power BI dashboards that consolidated KPIs from multiple data sources.',
+        'Automated recurring queries and reporting workflows to improve consistency across virtual teams.'
+      ]
+    },
+    {
+      type: 'Experience',
+      title: 'Strategic Planning Consultant',
+      institution: 'Sportoutaouais',
+      period: 'Jan 2024 - Apr 2024',
+      details: [
+        'Led stakeholder consultation across 15+ stakeholders.',
+        'Built multi‑scenario Excel financial models covering budget forecasts, sensitivity analysis, and variance tracking.',
+        'Helped translate stakeholder priorities into a strategic plan adopted by the Board of Directors.'
       ]
     },
     {
@@ -67,19 +92,9 @@ export default function Home() {
       institution: 'Personal Portfolio Project Series',
       period: 'Sept 2025 - Present',
       details: [
-        'Designed an automated campaign operations backend using Airtable and Make.com to manage brands, campaigns, and payouts.',
+        'Designed a simulated creator campaign operations backend using Airtable and Make.com to manage brands, campaigns, creators, deliverables, and payouts.',
         'Engineered an ETL pipeline parsing Canadian labour market listings via Adzuna API, categorizing skills using spreadsheet regex formulas.',
-        'Built a lead operations CRM workflow concept for home services, automating urgency classification and follow-up templates.'
-      ]
-    },
-    {
-      type: 'Campus Leadership',
-      title: 'Technology Coordinator',
-      institution: 'University BTM Student Association',
-      period: 'Sept 2024 - Apr 2025',
-      details: [
-        'Coordinated technical workshops on SQL queries and Excel pivot tables for 80+ BTM students.',
-        'Managed the student association web portal, maintaining responsive updates and coordinating event signup workflows.'
+        'Built a lead operations CRM workflow concept for home services, automating urgency classification and follow‑up templates.'
       ]
     }
   ];
@@ -87,38 +102,41 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,#f0fdfa_0%,transparent_100%)]">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-teal-200/50 bg-teal-50/50 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-800 mb-6 shadow-sm shadow-zinc-100">
-            Student Projects Portfolio
+      <section className="relative min-h-[80vh] flex flex-col md:flex-row items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,#f0fdfa_0%,transparent_100%)]">
+        {/* Left side – Text */}
+        <div className="flex-1 max-w-2xl mx-auto md:mx-0 text-center md:text-left z-10 space-y-6" data-aos="fade-right" data-aos-delay="100">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-teal-200/50 bg-teal-50/50 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-800 shadow-sm shadow-zinc-100">
+            Business Technology • Analytics • AI Automation
           </span>
-          
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] mb-6">
-            Business Analytics, <br />
-            <span className="text-teal-800">
-              Automation & AI Projects
-            </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] animate-fade-in" data-aos="fade-up" data-aos-delay="200">
+            Business Analytics,<br />
+            <span className="text-teal-800">Automation &amp; AI Projects</span>
           </h1>
-          
-          <p className="text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            I build practical projects that use data, automation, and AI tools to solve business problems, explore career decisions, and create useful systems.
+          <p className="text-base sm:text-lg text-zinc-600 max-w-xl leading-relaxed animate-fade-in" data-aos="fade-up" data-aos-delay="300">
+            I build practical systems that use data, automation, and AI to solve business problems, streamline operations, and improve decision-making.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#projects"
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-teal-800 hover:bg-teal-700 text-white text-xs font-bold uppercase tracking-wider transition-colors text-center shadow-md shadow-teal-800/10"
-            >
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start" data-aos="fade-left" data-aos-delay="400">
+            <a href="#projects" className="px-6 py-3 rounded-full bg-teal-800 hover:bg-teal-700 text-white text-sm font-bold uppercase tracking-wider transition-colors shadow-md shadow-teal-800/10 animate-fade-in" data-aos="zoom-in" data-aos-delay="500">
               View Projects
             </a>
-            <a 
-              href="#resume"
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-zinc-50 text-zinc-700 border border-zinc-200 text-xs font-bold uppercase tracking-wider transition-colors text-center shadow-sm"
-            >
+            <a href="#resume" className="px-6 py-3 rounded-full bg-white hover:bg-zinc-50 text-zinc-700 border border-zinc-200 text-sm font-bold uppercase tracking-wider transition-colors shadow-sm animate-fade-in" data-aos="zoom-in" data-aos-delay="600">
               View Resume
             </a>
           </div>
         </div>
+        {/* Right side – Interactive Visual */}
+        <div className="flex-1 w-full max-w-md mt-10 md:mt-0" data-aos="zoom-in">
+          <HeroVisual />
+        </div>
+        {/* AOS placeholder */}
+        <style jsx>{`
+          @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+          @keyframes fadeLeft { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+          @keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+          [data-aos="fade-right"] { animation: fadeRight 0.8s ease-out forwards; }
+          [data-aos="fade-left"] { animation: fadeLeft 0.8s ease-out forwards; }
+          [data-aos="zoom-in"] { animation: zoomIn 0.8s ease-out forwards; }
+        `}</style>
       </section>
 
       {/* Featured Projects Section */}
@@ -132,7 +150,7 @@ export default function Home() {
               Featured Case Studies
             </h3>
             <p className="text-zinc-500 text-xs leading-relaxed max-w-xl mx-auto">
-              A list of student project builds mapping labour-market demands, compliance audits, and AI workflows. Click "View Case Study" to inspect the problem, goal, process, and findings.
+              Selected project builds focused on operations systems, workflow automation, labour‑market analysis, and AI‑enabled business processes.
             </p>
           </div>
 
@@ -155,7 +173,7 @@ export default function Home() {
               Skills & Tools
             </h3>
             <p className="text-zinc-500 text-xs">
-              Practical competencies acquired through BTM coursework and personal project builds.
+              Practical tools used across automation, analytics, dashboarding, CRM logic, and operations projects.
             </p>
           </div>
 
@@ -176,15 +194,18 @@ export default function Home() {
       <section id="resume" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/50 bg-white relative">
         <div className="max-w-3xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-teal-800 uppercase mb-2">
-              Timeline
-            </h2>
+            <h2 className="text-xs font-mono font-bold tracking-widest text-teal-800 uppercase mb-2">Background & Project Work</h2>
             <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 mb-4">
-              Resume & Education
+              Background & Project Work
             </h3>
             <p className="text-zinc-500 text-xs">
-              Academic background, project development history, and student leadership roles.
+              Academic background and project development history.
             </p>
+            <div className="mt-4 flex justify-center">
+              <a href="/resume.pdf" download className="px-4 py-2 rounded-full bg-teal-800 text-white text-xs font-bold uppercase tracking-wider hover:bg-teal-700 transition-colors shadow-md">
+                Download Resume
+              </a>
+            </div>
           </div>
 
           <div className="relative border-l border-zinc-200/80 ml-4 md:ml-6 space-y-10">
@@ -261,13 +282,13 @@ export default function Home() {
                 Hi, I'm Abdulmaleek Kazeem
               </h3>
               <p className="text-zinc-600 text-xs leading-relaxed font-medium">
-                I focus on turning messy business workflows into clear systems. My projects combine analytics, automation, dashboards, APIs, CRM logic, and operational thinking.
+                I focus on turning messy business workflows into clear systems. My projects combine analytics, automation, dashboards, APIs, CRM logic, and operations thinking.
               </p>
               <p className="text-zinc-600 text-xs leading-relaxed">
-                As a Business Technology Management student, I am focused on business analytics, automation, and AI projects. I enjoy structuring unstructured databases, writing scripts to connect systems, and analyzing data patterns to make better-informed decisions.
+                My work is practical: I build prototypes that show how data and automation can improve campaign tracking, lead management, job‑market analysis, reporting, and decision‑making.
               </p>
               <p className="text-zinc-600 text-xs leading-relaxed">
-                My projects reflect this focus: automating workflows with APIs, writing custom regex categorization rules inside spreadsheets, and building Next.js web portals to visualize results. I aim to create simple, airy, and practical applications that resolve bottlenecks and present direct value.
+                I am especially interested in roles where I can help teams organize operations, improve workflows, build scalable systems, and use automation to reduce manual work.
               </p>
             </div>
           </div>

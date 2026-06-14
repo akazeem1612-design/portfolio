@@ -36,7 +36,7 @@ export const projects: Project[] = [
     tags: ["Operations", "Creator Economy", "Automation", "Campaign Management", "SOPs"],
     stats: ["3 brands tracked", "3 campaigns managed", "6 creators assigned", "1 alert automation built"],
     image: "/projects/creator-ops/dashboard_creator_ops.png",
-    status: "Prototype built",
+    status: "Prototype Built",
     date: "Fall 2025",
     workflowImage: "/projects/creator-ops/workflow_at_risk_alert.png",
     workflowTitle: "At-Risk Deliverable Alert Automation",
