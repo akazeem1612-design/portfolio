@@ -4,7 +4,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import StyledButton from '@/components/StyledButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,14 +32,14 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'backdrop-blur-md bg-white/80 border-b border-zinc-200/50 py-3.5 shadow-sm shadow-zinc-100/30' 
+        ? 'backdrop-blur-md bg-black/60 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
         : 'bg-transparent py-5'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo Brand Signature */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-base font-extrabold tracking-tight text-zinc-900 group-hover:text-teal-800 transition-colors">
+            <span className="text-base font-extrabold tracking-tight text-white group-hover:text-[#00F0FF] transition-colors">
               Abdulmaleek Kazeem
             </span>
           </Link>
@@ -51,22 +50,25 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-xs font-semibold uppercase tracking-wider text-zinc-600 hover:text-teal-800 transition-colors duration-200 relative group"
+                className="text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-[#00F0FF] transition-colors duration-200 relative group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-teal-800 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#00F0FF] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <StyledButton as="a" href="/#contact" variant="primary">
-                Get In Touch
-              </StyledButton>
+            <Link 
+              href="/#contact"
+              className="bg-[#00F0FF] text-black rounded-full px-5 py-2 font-semibold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:bg-[#38BDF8] hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all duration-300"
+            >
+              Get In Touch
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-zinc-600 hover:text-zinc-900 focus:outline-none p-2"
+              className="text-slate-400 hover:text-white focus:outline-none p-2"
               aria-label="Toggle navigation menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +84,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer Navigation */}
-      <div className={`md:hidden absolute top-full left-0 right-0 bg-white border-b border-zinc-200 shadow-lg transition-all duration-300 ease-in-out ${
+      <div className={`md:hidden absolute top-full left-0 right-0 bg-[#0A0A0C] border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 ease-in-out ${
         isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible pointer-events-none'
       }`}>
         <div className="px-4 pt-2 pb-6 space-y-3">
@@ -91,7 +93,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded text-sm font-semibold uppercase tracking-wider text-zinc-600 hover:text-teal-800 hover:bg-zinc-50 transition-all"
+              className="block px-3 py-2 rounded text-sm font-semibold uppercase tracking-wider text-slate-400 hover:text-[#00F0FF] hover:bg-[#00F0FF]/10 transition-all"
             >
               {link.name}
             </Link>
@@ -100,7 +102,7 @@ export default function Navbar() {
             <Link
               href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="block text-center w-full text-xs font-bold uppercase tracking-wider text-white bg-teal-800 hover:bg-teal-700 transition-colors py-2 rounded-full"
+              className="block text-center w-full text-xs font-bold uppercase tracking-wider text-black bg-[#00F0FF] hover:bg-[#38BDF8] shadow-[0_0_20px_rgba(0,240,255,0.25)] transition-colors py-2 rounded-full"
             >
               Get In Touch
             </Link>

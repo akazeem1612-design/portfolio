@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF7F0; /* Cream background */
-  --foreground: #111827; /* Dark text */
-  --card: #FFFFFFCC; /* Soft card background with opacity */
-  --card-hover: #FAF9F6; /* Slightly different on hover */
-  --card-border: rgba(24, 24, 27, 0.06);
-  --accent: #005F56; /* Deep teal */
-  --accent-light: #047857; /* Emerald */
-  --accent-glow: rgba(0,95,86,0.18);
-  --muted: #6B7280; /* Muted text */
-  --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --background: #0A0A0C; /* Deep space dark */
+  --foreground: #E2E8F0; /* Crisp light gray/white */
+  --card: rgba(15, 23, 42, 0.4); /* Dark glass */
+  --card-hover: rgba(15, 23, 42, 0.6); 
+  --card-border: rgba(56, 189, 248, 0.15); /* Faint cyan edge */
+  --accent: #00F0FF; /* Electric Cyan */
+  --accent-light: #38BDF8; /* Sky Blue */
+  --accent-glow: rgba(0, 240, 255, 0.25);
+  --muted: #94A3B8; /* Slate 400 */
+  --font-sans: 'Inter', var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 @theme {
@@ -35,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom modern scrollbar for light mode */
+/* Custom futuristic scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -44,32 +44,35 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #e4e4e7;
+  background: rgba(56, 189, 248, 0.2);
   border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.1);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Glassmorphism/blur utility for light mode header */
+/* Glassmorphism/blur utility for futuristic dark mode */
 .glassmorphism {
-  background: rgba(252, 251, 250, 0.8);
+  background: rgba(10, 10, 12, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(24, 24, 27, 0.05);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
 }
 
-/* Clean, modern card transition */
+/* Clean, futuristic HUD card transition */
 .project-card {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  box-shadow: 0 1px 3px 0 rgba(24, 24, 27, 0.02), 0 1px 2px -1px rgba(24, 24, 27, 0.02);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(15, 118, 110, 0.15);
-  box-shadow: 0 12px 30px -10px rgba(24, 24, 27, 0.06), 0 4px 12px -5px rgba(15, 118, 110, 0.03);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(0, 240, 255, 0.05);
 }
